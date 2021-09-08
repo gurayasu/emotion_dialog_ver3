@@ -3,7 +3,7 @@
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-apiKey: "AIzaSyCEY0SMHEQvxD9G3h07CovY_8Z6br4f_30",
+apiKey: "",
 authDomain: "dev21chat-8c459.firebaseapp.com",
 databaseURL: "https://dev21chat-8c459-default-rtdb.firebaseio.com/",
 projectId: "dev21chat-8c459",
