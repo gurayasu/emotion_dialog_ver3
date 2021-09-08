@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感情日記</title>
+    <link rel="stylesheet" href="localstorage.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>    
+
+<section>
+
+<header>
+    <h1>感情日記</h1>
+</header>
+
+<!-- 日々登録パート -->
+<div class="wrapper__first">
+<h2>‹INPUT›</h2>
+<p>今の感情を選んでみよう</p>
+<ul class="icon">
+    <li class="icon__list">
+        <img src="img/anger.png" alt="" id="anger">
+        <p>怒り</p>
+    </li>   
+    <li class="icon__list">
+        <img src="img/sad.png" alt="" id="sad">
+        <p>悲しい</p>
+    </li>
+    <li class="icon__list">
+        <img src="img/hard.png" alt="" id="hard">
+        <p>辛い</p>
+    </li>
+    <li class="icon__list">
+        <img src="img/happy.png" alt="" id="happy">
+        <p>嬉しい</p>
+    </li>
+    <li class="icon__list">
+        <img src="img/fun.png" alt="" id="fun">
+        <p>楽しい</p>
+    </li>
+</ul>
+</div>
+
+<!-- テキスト入力 -->
+<div class="wrapper__second">
+<div class="select__wrapper__1 select__wrapper__2">
+    <select name ="memo__key" id="memo__key">
+        <option value="">書き起こしたい感情</option>  
+    　  <option value="anger">怒り</option>  
+        <option value="sad">悲しい</option>
+        <option value="hard">辛い</option>
+        <option value="happy">嬉しい</option>
+        <option value="fun">楽しい</option>
+    </select>
+</div>
+<textarea id="memo__text" placeholder="感情や出来事を書き起こしてみよう🙃" ></textarea>
+
+<div class="btn__wrapper">
+    <button id="memo__btn">保存</button>
+</div>
+</div>
+
+<!-- 結果確認パート -->
+<div class="wrapper__second">
+    <h2>‹OUTPUT›</h2>
+<div class="select__wrapper__1 select__wrapper__2">
+    <select name ="type" id="type">
+    　  <option value="">振り返る期間を選択</option>  
+        <option value="month">1ヶ月</option>
+        <option value="week">1週間</option>
+        <option value="yesterday">昨日</option>
+    </select>
+</div>
+
+<div class="btn__wrapper">
+    <button id="btn">結果を表示</button>
+</div>
+</div>
+
+ <!-- 結果グラフ作成 -->
+ <div class="wrapper__third">
+    <canvas id="myPieChart"></canvas>
+    <div class="memo__space">
+        <h3 id="memo__title">«過去コメント一覧»</h3>
+        <ul id="memo__list">
+            <!-- ここに追加データが挿入される -->
+        </ul>
+    </div>
+</div>
+
+<!--  Chat Bar Block -->
+<div class="chat-bar-collapsible">
+    <button id="chat-button" type="button" class="collapsible">感情Chat
+        <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+    </button>
+
+<div class="content">
+    <div class="full-chat-block">
+    <!-- Message Container -->
+    <div class="outer-container">
+        <div class="chat-container">
+        <!-- Message_past -->
+        <div id="chatbox-past">
+        <!-- <h5 id="chat-timestamp-past"></h5> -->
+        <!-- <p class="botText-past"><span></span></p> -->
+        <!-- <p id="botsecondMessage" class="botText"><span></span></p> -->
+        </div>
+        <!-- Message -->
+        <div id="chatbox">
+            <h5 id="chat-timestamp"></h5>
+            <p id="botstarterMessage" class="botText"><span>Loading...</span></p>
+            <!-- <p id="botsecondMessage" class="botText"><span></span></p> -->
+        </div>
+
+        <!-- User Input Box -->
+        <div class="chat-bar-input-block">
+            <div id="userInput">
+                <input type="text" id="textInput" class="input-box" name="masg" placeholder="Tap 'Enter' to send a message">
+                <p></p>
+            </div>
+
+            <div class="chat-bar-icons">
+                <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                onclick="heartButton()"></i>
+                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                onclick="sendButton()"></i>
+            </div>
+        </div>
+
+        <div id="chat-bar-bottom">
+            <p></p>
+        </div>
+
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase.js"></script>
+<script src="localstorage.js"></script>   
+<script src="chat.js"></script>
+<script src="responses.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+</body>
+</html>
