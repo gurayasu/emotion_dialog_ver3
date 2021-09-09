@@ -50,7 +50,7 @@ window.onload = function unlock(){
     const fixed_pw = 'code';
 
     if(user_pw === false || user_pw === null){
-        alert('Please please input password.(code)');
+        alert('Please please input password.\n※PWは「code」です。');
         unlock();
     } else {
         if(user_pw === fixed_pw){
